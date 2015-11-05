@@ -589,7 +589,7 @@ def state_changed(state, duration):
         xbmc.sleep(1)
         hue.light[2].get_current_setting()
 
-    if hue.settings.mode == 0 or hue.settings.mode == 2: # ambilight mode
+    if hue.settings.mode == 0: # ambilight mode
       #start capture when playback starts
       capture_width = 32 #100
       capture_height = int(capture_width / capture.getAspectRatio())
@@ -597,7 +597,7 @@ def state_changed(state, duration):
       capture.capture(capture_width, capture_height, xbmc.CAPTURE_FLAG_CONTINUOUS)
 
   if (state == "started" and pauseafterrefreshchange == 0) or state == "resumed":
-    if (hue.settings.mode == 0 or hue.settings.mode == 2) and hue.settings.ambilight_dim: # only if a complete group
+    if hue.settings.mode == 0 and hue.settings.ambilight_dim: # only if a complete group
       logger.debuglog("dimming group for ambilight")
       hue.dim_group.dim_light()
     else:
@@ -605,7 +605,7 @@ def state_changed(state, duration):
       hue.dim_lights()
   elif state == "paused" and hue.last_state == "dimmed":
     #only if its coming from being off
-    if (hue.settings.mode == 0 or hue.settings.mode == 2) and hue.settings.ambilight_dim:
+    if hue.settings.mode == 0 and hue.settings.ambilight_dim:
       # Be persistent in restoring the lights
       # (prevent from being overwritten by an ambilight update)
       for i in range(0, 3):
@@ -615,7 +615,7 @@ def state_changed(state, duration):
     else:
       hue.partial_lights()
   elif state == "stopped":
-    if (hue.settings.mode == 0 or hue.settings.mode == 2) and hue.settings.ambilight_dim:
+    if hue.settings.mode == 0 and hue.settings.ambilight_dim:
       # Be persistent in restoring the lights
       # (prevent from being overwritten by an ambilight update)
       for i in range(0, 3):
