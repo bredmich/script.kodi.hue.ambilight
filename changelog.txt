@@ -1,3 +1,6 @@
+0.7.3
+ - [feature] added 2-Zone Ambilight mode
+
 0.7.2
  - [fix] enhanced logging for autodiscovery
  - [feature] added meethue.com api for autodiscovery as fallback for local SSDP

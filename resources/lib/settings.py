@@ -18,6 +18,8 @@ class settings():
     self.light2_id             = int(__addon__.getSetting("light2_id"))
     self.light3_id             = int(__addon__.getSetting("light3_id"))
     self.group_id              = int(__addon__.getSetting("group_id"))
+    self.lightleft_id          = int(__addon__.getSetting("lightleft_id"))
+    self.lightright_id         = int(__addon__.getSetting("lightright_id"))
     self.misc_initialflash     = __addon__.getSetting("misc_initialflash") == "true"
     self.misc_disableshort     = __addon__.getSetting("misc_disableshort") == "true"
 
@@ -56,6 +58,8 @@ class settings():
     'light2_id: %s\n' % str(self.light2_id) + \
     'light3_id: %s\n' % str(self.light3_id) + \
     'group_id: %s\n' % str(self.group_id) + \
+    'lightleft_id: %s\n' % str(self.lightleft_id) + \
+    'lightright_id: %s\n' % str(self.lightright_id) + \
     'misc_initialflash: %s\n' % str(self.misc_initialflash) + \
     'misc_disableshort: %s\n' % str(self.misc_disableshort) + \
     'dimmed_bri: %s\n' % str(self.dimmed_bri) + \

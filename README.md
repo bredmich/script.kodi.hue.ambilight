@@ -43,6 +43,7 @@ Note for Raspberry Pi users:
 
 Release history
 ---------------
+  * 2015-11-05 v 0.7.3 Added 2-Zone Ambilight Feature (Thanks to @acaranta)
   * 2015-11-02 v 0.7.2 Minor update, attempting to resolve autodiscover issues
   * 2015-07-26 v 0.7.1 Updated Icon, code refactor, bugfixes, better group performance, handling of "pause during screen refresh rate change" setting
   * 2015-01-15 v 0.7.0 Fixed Kodi references, added paused brightness override (changes beginning here by @michaelrcarroll)
